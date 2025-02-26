@@ -4,7 +4,7 @@ import { useState, useContext, useEffect } from "react";
 import { AuthContext } from "../../../contexts/AuthContext";
 import Postagem from "../../../models/Postagem";
 import { buscar } from "../../../services/Service";
-import { DNA } from "react-loader-spinner";
+import { Spinner } from "../../spinner/Spinner";
 
 function ListaPostagens() {
 
@@ -44,16 +44,9 @@ function ListaPostagens() {
     return (
         <>
             {postagens.length === 0 && (
-                <DNA
-                    visible={true}
-                    height="200"
-                    width="200"
-                    ariaLabel="dna-loading"
-                    wrapperStyle={{}}
-                    wrapperClass="dna-wrapper mx-auto"
-                />
+                <Spinner/>
             )}
-            <div className="flex justify-center w-full my-4">
+            <div className="bg-neutral-200 flex justify-center w-full my-0">
                 <div className="container flex flex-col mx-2">
                     <div className='container mx-auto my-4 
                         grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'

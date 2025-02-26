@@ -153,7 +153,7 @@ function FormPostagem() {
                         placeholder="Titulo"
                         name="titulo"
                         required
-                        className="border-2 border-slate-700 rounded p-2"
+                        className="border-2 border-neutral-500 rounded p-2 bg-neutral-100"
                         value={postagem.titulo}
                         onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                     />
@@ -165,7 +165,7 @@ function FormPostagem() {
                         placeholder="Texto"
                         name="texto"
                         required
-                        className="border-2 border-slate-700 rounded p-2"
+                        className="border-2 border-neutral-500 rounded p-2 bg-neutral-100"
                         value={postagem.texto}
                         onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                     />
