@@ -4,6 +4,7 @@ import { AuthContext } from "../../../contexts/AuthContext"
 import Tema from "../../../models/Tema"
 import { buscar, deletar } from "../../../services/Service"
 import { RotatingLines } from "react-loader-spinner"
+import { ToastAlerta } from "../../../utils/ToastAlerta"
 
 function DeletarTema() {
 
@@ -33,7 +34,7 @@ function DeletarTema() {
 
     useEffect(() => {
         if (token === '') {
-            alert('Você precisa estar logado')
+            ToastAlerta("Você precisa estar logado", "info");
             navigate('/')
         }
     }, [token])
@@ -54,13 +55,13 @@ function DeletarTema() {
                 }
             })
 
-            alert('Tema apagado com sucesso')
+            ToastAlerta("Tema apagado com sucesso", "sucesso")
 
         } catch (error: any) {
             if (error.toString().includes('403')) {
                 handleLogout()
             }else {
-                alert('Erro ao deletar o tema.')
+                ToastAlerta("Erro ao deletar o tema","erro");
             }
         }
 
@@ -74,24 +75,24 @@ function DeletarTema() {
     
     return (
         <div className='container w-1/3 mx-auto'>
-            <h1 className='text-4xl text-center my-4'>Deletar tema</h1>
-            <p className='text-center font-semibold mb-4'>
+            <h1 className='text-4xl text-center py-4 text-neutral-900'>Deletar tema</h1>
+            <p className='text-center text-neutral-900 font-semibold mb-4'>
                 Você tem certeza de que deseja apagar o tema a seguir?</p>
-            <div className='border flex flex-col rounded-2xl overflow-hidden justify-between'>
+            <div className='border flex shadow-md flex-col bg-neutral-100 rounded-2xl overflow-hidden justify-between'>
                 <header 
-                    className='py-2 px-6 bg-indigo-600 text-white font-bold text-2xl'>
+                    className='py-2 px-6 bg-teal-200 text-white font-bold text-2xl'>
                     Tema
                 </header>
-                <p className='p-8 text-3xl bg-slate-200 h-full'>{tema.descricao}</p>
-                <div className="flex">
+                <p className='p-8 text-3xl bg-neutral-100 h-full'>{tema.descricao}</p>
+                <div className="flex flex-row justify-end gap-3 mx-3 py-2 bg-neutral-100">
                     <button 
-                        className='text-slate-100 bg-red-400 hover:bg-red-600 w-full py-2'
+                        className='text-white bg-error 
+                            hover:bg-red-700 rounded flex items-center px-5 py-2.5'
                         onClick={retornar}>
                         Não
                     </button>
                     <button 
-                        className='w-full text-slate-100 bg-indigo-400 
-                                   hover:bg-indigo-600 flex items-center justify-center'
+                        className='text-slate-100 bg-teal-400 hover:bg-teal-700 px-5 py-2.5 rounded flex items-center'
                                    onClick={deletarTema}>
                         {isLoading ?
                             <RotatingLines
