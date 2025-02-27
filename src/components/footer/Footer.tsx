@@ -1,4 +1,4 @@
-import { FacebookLogo, InstagramLogo, LinkedinLogo } from '@phosphor-icons/react'
+import { FacebookLogo, InstagramLogo, LinkedinLogo,GithubLogo } from '@phosphor-icons/react'
 import { ReactNode, useContext } from 'react'
 import { AuthContext } from '../../contexts/AuthContext'
 
@@ -21,14 +21,11 @@ function Footer() {
                     </p>
                     <p className='text-lg'>Acesse nossas redes sociais</p>
                     <div className='flex gap-2'>
-                        <a href="https://www.linkedin.com/school/generationbrasil" target="_blank">
+                        <a href="https://www.linkedin.com/in/caroline-ribeiro-aa14442b0/" target="_blank">
                             <LinkedinLogo size={48} weight='bold' />
                         </a>
-                        <a href="https://www.instagram.com/generationbrasil" target="_blank">
-                            <InstagramLogo size={48} weight='bold' />
-                        </a>
-                        <a href="https://www.facebook.com/generationbrasil" target="_blank">
-                            <FacebookLogo size={48} weight='bold' />
+                        <a href="https://github.com/RibeiroCaroline" target="_blank">
+                            <GithubLogo size={48} weight='bold' />
                         </a>
                     </div>
                 </div>
