@@ -12,7 +12,7 @@ function Login() {
     const { usuario, handleLogin, isLoading } = useContext(AuthContext)
 
     const [usuarioLogin, setUsuarioLogin] = useState<UsuarioLogin>(
-        { usuario: "carolteste@teste.com", senha: "carolteste" } as UsuarioLogin
+        {} as UsuarioLogin
     )
 
     useEffect(() => {
